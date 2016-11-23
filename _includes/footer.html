@@ -9,7 +9,7 @@
 		{% if site.instagram %}
 		<li><a href="http:s//www.instagram.com/{{ site.instagram }}" class="fa-instagram"><span class="label">Instagram</span></a></li>
 		{% endif %}
-		<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+		<li><a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="fa-rss"><span class="label">RSS</span></a></li>
 		<li><a href="mailto:{{ site.email }}" class="fa-envelope"><span class="label">Email</span></a></li>
 	</ul>
 	<p class="copyright">&copy; {{ site.copyright }}. Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
