@@ -1,10 +1,16 @@
 <section id="footer">
 	<ul class="icons">
-		<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-		<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-		<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+		{% if site.twitter %}
+		<li><a href="https://twitter.com/{{ site.twitter }}" class="fa-twitter"><span class="label">Twitter</span></a></li>
+		{% endif %}
+		{% if site.facebook %}
+		<li><a href="https://www.facebook.com/{{ site.facebook }}" class="fa-facebook"><span class="label">Facebook</span></a></li>
+		{% endif %}
+		{% if site.instagram %}
+		<li><a href="http:s//www.instagram.com/{{ site.instagram }}" class="fa-instagram"><span class="label">Instagram</span></a></li>
+		{% endif %}
 		<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-		<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+		<li><a href="mailto:{{ site.email }}" class="fa-envelope"><span class="label">Email</span></a></li>
 	</ul>
 	<p class="copyright">&copy; {{ site.copyright }}. Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
 </section>
