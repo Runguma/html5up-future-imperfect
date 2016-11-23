@@ -7,7 +7,8 @@ layout: default
 {% include menu.html %}
 <!-- Main -->
 <div id="main">
-
+	<!-- Footer -->
+	{% include footer.html %}
 </div>
 <!-- To include a custom search engine by Google, put your own key below, then uncomment the line `{% include searchBar.html %}` in `_includes/header.html` and the line `{% include menuSearchBar.html %}` `_includes/menu.html` -->
 <script>
@@ -22,5 +23,3 @@ layout: default
 	})();
 </script>
 <gcse:searchresults-only queryParameterName="searchString"></gcse:searchresults-only>
-<!-- Footer -->
-{% include footer.html %}
