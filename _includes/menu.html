@@ -5,19 +5,22 @@
 	<section>
 		<ul class="links">
 		{% for my_page in site.pages %}
+			{% if my_page.showOnNavigation == true %}
 			<li>
-				<a href="#">
-					<h3>Lorem ipsum</h3>
-					<p>Feugiat tempus veroeros dolor</p>
+				<a href="{{ site.baseurl }}{{ my_page.url }}">
+					<h3>{{ my_page.title }}</h3>
+					<p>{{ my_page.tagline }}</p>
 				</a>
 			</li>
+			{% endif %}
 		{% endfor %}
 		</ul>
 	</section>
 	<!-- Actions -->
+	<!-- The button below has not been implemented as Jekyll can only generate static websites
 	<section>
 		<ul class="actions vertical">
 			<li><a href="#" class="button big fit">Log In</a></li>
 		</ul>
-	</section>
+	</section> -->
 </section>
