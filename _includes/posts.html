@@ -1,20 +1,22 @@
 {% for post in site.posts %}
-<article class="post">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 	<header>
 		<div class="title">
-			<h2><a href="#">Magna sed adipiscing</a></h2>
-			<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+			<h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+			<p>{{ post.tagline }}</p>
 		</div>
 		<div class="meta">
-			<time class="published" datetime="2015-11-01">November 1, 2015</time>
-			<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+			<time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+			{% if post.author %}
+			<a href="{{ site.baseurl }}/aboutPage.html" class="author"><span class="name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ post.author }}</span><img src="{{ site.baseurl }}{{ site.avatar }}" alt="" /></a>
+			{% endif %}
 		</div>
 	</header>
-	<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-	<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+	<a href="{{ site.baseurl }}{{ post.url }}" class="image featured"><img src="{{ site.baseurl }}{{ post.image }}" alt="" /></a>
+	<p>{{ post.description }}</p>
 	<footer>
 		<ul class="actions">
-			<li><a href="#" class="button big">Continue Reading</a></li>
+			<li><a href="{{ site.baseurl }}{{ post.url }}" class="button big">Continue Reading</a></li>
 		</ul>
 		<ul class="stats">
 			<li><a href="#">General</a></li>
@@ -23,9 +25,3 @@
 		</ul>
 	</footer></article>
 {% endfor %}
-
-<article itemscope itemtype="http://schema.org/BlogPosting">
-	<h1>{{ page.title }}</h1>
-	<p><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-	{{ content }}
-</article>
