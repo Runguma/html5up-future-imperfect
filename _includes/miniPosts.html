@@ -3,11 +3,13 @@
 	{% for post in site.posts %}
 		{% if post.featureAsMinipost == true %}
 		<!-- Mini Post -->
-		<article class="mini-post">
+		<article class="mini-post" itemscope itemtype="http://schema.org/BlogPosting">
 			<header>
 				<h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-				<time class="published" datetime="2015-10-20">October 20, 2015</time>
+				<time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+				{% if post.author %}
 				<a href="{{ site.baseurl }}/aboutPage.html" class="author"><img src="{{ site.baseurl }}{{ site.avatar }}" alt="" /></a>
+				{% endif %}
 			</header>
 			<a href="{{ site.baseurl }}{{ post.url }}" class="image"><img src="{{ site.baseurl }}{{ post.image }}" alt="" /></a>
 		</article>
