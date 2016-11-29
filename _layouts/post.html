@@ -8,19 +8,21 @@ layout: default
 <!-- Main -->
 <div id="main">
 	<!-- Post -->
-	<article class="post">
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 		<header>
 			<div class="title">
 				<h2><a href="#">{{ page.title }}</a></h2>
 				<p>{{ page.tagline }}</p>
 			</div>
 			<div class="meta">
-				<time class="published" datetime="2015-11-01">{{ page.date }}</time>
-				<a href="#" class="author"><span class="name">{{ page.author }}</span><img src="images/avatar.jpg" alt="" /></a>
+				<time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+				{% if page.author %}
+				<a href="#" class="author"><span class="name" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span><img src="images/avatar.jpg" alt="" /></a>
+				{% endif %}
 			</div>
 		</header>
 		{% if page.image %}
-		<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+		<span class="image featured"><img src="{{ site.baseurl }}{{ page.image }}" alt="" /></span>
 		{% endif %}
 		{{ content }}
 		<footer>
@@ -34,9 +36,3 @@ layout: default
 	<!-- Footer -->
 	{% include footer.html %}
 </div>
-
-<article itemscope itemtype="http://schema.org/BlogPosting">
-	<h1>{{ page.title }}</h1>
-	<p><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-	{{ content }}
-</article>
