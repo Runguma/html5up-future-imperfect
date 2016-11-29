@@ -9,7 +9,7 @@
 				<time class="published" datetime="2015-10-20">October 20, 2015</time>
 				<a href="{{ site.baseurl }}/aboutPage.html" class="author"><img src="{{ site.baseurl }}{{ site.avatar }}" alt="" /></a>
 			</header>
-			<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+			<a href="{{ site.baseurl }}{{ post.url }}" class="image"><img src="{{ site.baseurl }}{{ post.image }}" alt="" /></a>
 		</article>
 		{% endif %}
 	{% endfor %}
