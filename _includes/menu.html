@@ -7,7 +7,7 @@
 		{% for my_page in site.pages %}
 			{% if my_page.showOnNavigation == true %}
 			<li>
-				<a href="{{ site.baseurl }}{{ my_page.url }}">
+				<a href="{{ site.baseurl }}/{{ my_page.url }}">
 					<h3>{{ my_page.title }}</h3>
 					<p>{{ my_page.tagline }}</p>
 				</a>
