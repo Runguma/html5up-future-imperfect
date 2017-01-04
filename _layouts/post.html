@@ -15,7 +15,7 @@ layout: default
 				<p>{{ page.tagline }}</p>
 			</div>
 			<div class="meta">
-				<time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+				<time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
 				{% if page.author %}
 				<a href="#" class="author"><span class="name" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span><img src="images/avatar.jpg" alt="" /></a>
 				{% endif %}
