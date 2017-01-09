@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<!-- Header -->
+{% include header.html %}
+<!-- Menu -->
+{% include menu.html %}
+<!-- Main -->
+<div id="main">
+	<!-- Post -->
+	<article class="post">
+		<header>
+			<div class="title">
+				<h2><a href="#">{{ page.title }}</a></h2>
+				<p>{{ page.tagline }}</p>
+			</div>
+		</header>
+		{% if page.image %}
+		<span class="image featured"><img src="{{ site.baseurl }}/{{ page.image }}" alt="" /></span>
+		{% endif %}
+		{{ content }}
+	</article>
+	<!-- Footer -->
+	{% include footer.html %}
+</div>
