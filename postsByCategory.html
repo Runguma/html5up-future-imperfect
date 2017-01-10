@@ -6,4 +6,6 @@ showOnNavigation: true
 
 {% for post in site.posts %}
 	{% if post.category == "Science" %}
+		{{ post.title }}
+	{% endif %}
 {% endfor %}
