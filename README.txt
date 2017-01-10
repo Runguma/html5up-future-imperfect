@@ -27,4 +27,5 @@ TODO:
 
 [] Pagination
 [] Category search
-[]
+[] Count likes
+[] Count comments
