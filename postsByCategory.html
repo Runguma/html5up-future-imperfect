@@ -1,12 +1,11 @@
 ---
 layout: page
 title: Posts by Category
-showOnNavigationMenu: true
+showOnNavigation: true
 ---
-{% for category in site.categories %}
+
 	{% for post in site.posts %}
-		{% if post.category == category %}
+
 			{{ post.title }}
-		{% endif %}
+
 	{% endfor %}
-{% endfor %}
