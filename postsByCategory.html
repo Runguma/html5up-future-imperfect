@@ -4,6 +4,6 @@ title: Posts by Category
 showOnNavigation: true
 ---
 
-	{% for post in site.posts %}
-		{{ post.category }}
-	{% endfor %}
+{% for post in site.posts %}
+	{% if post.category == "Science" %}
+{% endfor %}
