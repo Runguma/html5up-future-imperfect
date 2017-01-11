@@ -7,8 +7,8 @@ showOnNavigation: true
 	<h2>{{ category | first }}</h2>
 	<section>
 		<div class="mini-posts">
-		{% for post in posts %}
-			{% for posts in category %}
+		{% for posts in category %}
+			{% for post in posts %}
 			<!-- Mini Post -->
 			<article class="mini-post" itemscope itemtype="http://schema.org/BlogPosting">
 				<header>
