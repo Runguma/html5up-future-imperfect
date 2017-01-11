@@ -3,12 +3,25 @@ layout: page
 title: Posts by Category
 showOnNavigation: true
 ---
-
 {% for category in site.categories %}
-	<h3>{{ category | first }}</h3>
 	{% for posts in category %}
-		{% for post in posts %}
-			<h4>{{ post.title }}</h4>
-		{% endfor %}
+		<section>
+			<h3>{{ category | first }}</h3>
+			{% for post in posts %}
+			<div class="mini-posts">
+				<!-- Mini Post -->
+				<article class="mini-post" itemscope itemtype="http://schema.org/BlogPosting">
+					<header>
+						<h3><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></h3>
+						<time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+						{% if post.author %}
+							<a href="{{ site.baseurl }}/aboutPage.html" class="author"><img src="{{ site.baseurl }}/{{ site.avatar }}" alt="" /></a>
+						{% endif %}
+					</header>
+					<a href="{{ site.baseurl }}/{{ post.url }}" class="image"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></a>
+				</article>
+			</div>
+			{% endfor %}
+		</section>
 	{% endfor %}
 {% endfor %}
