@@ -4,6 +4,12 @@ title: Posts by Category
 showOnNavigation: true
 ---
 
-{% for category in site.categories %}
-	<h3>{{ category }}</h3>
+{% for a_category in site.categories %}
+	<h3>{{ a_category }}</h3>
+{% endfor %}
+
+{% for post in site.posts %}
+	{% if post.category == category %}
+		<h4>{{ post.title }}</h4>
+	{% endif %}
 {% endfor %}
