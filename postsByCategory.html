@@ -4,9 +4,9 @@ title: Posts by Category
 showOnNavigation: true
 ---
 {% for category in site.categories %}
+	<h2>{{ category | first }}</h2>
 	{% for posts in category %}
 		<section>
-			<h2>{{ category | first }}</h2>
 			{% for post in posts %}
 			<div class="mini-posts">
 				<!-- Mini Post -->
