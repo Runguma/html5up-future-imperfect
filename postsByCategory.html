@@ -6,4 +6,9 @@ showOnNavigation: true
 
 {% for category in site.categories %}
 	<h3>{{ category }}</h3>
+	{% for posts in category %}
+		{% for post in posts %}
+			{{ post.title }}
+		{% endfor %}
+	{% endfor %}
 {% endfor %}
