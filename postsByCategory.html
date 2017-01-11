@@ -5,10 +5,10 @@ showOnNavigation: true
 ---
 
 {% for category in site.categories %}
-	<h3>{{ category }}</h3>
+	<h3>{{ category | first }}</h3>
 	{% for posts in category %}
 		{% for post in posts %}
-			{{ post.title }}
+			<h4>{{ post.title }}</h4>
 		{% endfor %}
 	{% endfor %}
 {% endfor %}
