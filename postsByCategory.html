@@ -7,8 +7,8 @@ showOnNavigation: true
 {% for category in site.categories %}
 	<h3>{{ category }}</h3>
 	{% for post in site.posts %}
-		{% if post.category == "Science" %}
-			{{ post.title }}
+		{% if post.category == category %}
+			<h4>{{ post.title }}</h4>
 		{% endif %}
 	{% endfor %}
 {% endfor %}
