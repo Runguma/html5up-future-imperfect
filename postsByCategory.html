@@ -9,7 +9,7 @@ showOnNavigation: true
 		<ul class="posts">
 		{% for posts in category %}
 			{% for post in posts %}
-				{% if post.category == category %}
+				{% if post.category == category[0] %}
 			<li>
 				<article>
 					<header>
