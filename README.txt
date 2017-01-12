@@ -26,6 +26,5 @@ Credits:
 TODO:
 
 [] Pagination
-[] Posts by category
 [] Likes' count
 [] Comments' count
