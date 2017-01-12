@@ -8,6 +8,7 @@ description: Another fine responsive site template by HTML5 UP
 logo: images/logo.jpg
 about: Write here a couple sentences about the author.
 avatar: images/avatar.jpg
+paginate: 4
 
 # Contact information
 email: name@provider.com
