@@ -9,6 +9,7 @@ showOnNavigation: true
 		<ul class="posts">
 		{% for posts in category %}
 			{% for post in posts %}
+				{% if post.category == category %}
 			<li>
 				<article>
 					<header>
@@ -17,6 +18,7 @@ showOnNavigation: true
 					<a href="{{ site.baseurl }}/{{ post.url }}" class="image"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></a>
 				</article>
 			</li>
+				{% endif %}
 			{% endfor %}
 		{% endfor %}
 		</ul>
