@@ -19,11 +19,12 @@
 			<li><a href="{{ site.baseurl }}/{{ post.url }}" class="button big">Continue Reading</a></li>
 		</ul>
 		<ul class="stats">
-			{% if page.category %}
-			<li><a href="{{ site.baseurl }}/postsByCategory.html">{{ page.category }}</a></li>
-			{{ page.category }}
+			{% if post.category %}
+			<li><a href="{{ site.baseurl }}/postsByCategory.html">{{ post.category }}</a></li>
 			{% endif %}
-			<!-- <li><a href="#" class="icon fa-heart">28</a></li> -->
+			<!-- To get a comment count, umcomment below.  -->
+			<!--<li><a href="{{ site.baseurl }}/{{ post.url }}" class="icon fa-comment"><span class="disqus-comment-count" data-disqus-url="{{ site.baseurl }}/{{ post.url }}"></span></a></li>-->
+			<!-- Disqus does not currently support the feature below. -->
 			<!-- <li><a href="#" class="icon fa-comment">128</a></li> -->
 		</ul>
 	</footer></article>
