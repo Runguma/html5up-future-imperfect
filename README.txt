@@ -22,8 +22,3 @@ Credits:
 		Misc. Sass functions (@HugoGiraudel)
 		Respond.js (j.mp/respondjs)
 		Skel (skel.io)
-
-TODO:
-
-[] Likes' count
-[] Comments' count
